@@ -10,16 +10,15 @@ class MiAplicacion extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Mi Aplicación'),
+          title: Text('Mi Aplicación De La Cruz Asto'),
         ),
         body: Center(
           child: ElevatedButton(
-            onPressed: () {
-// Acción a realizar cuando se presiona el botón
-              print('¡Botón presionado!');
-            },
-            child: Text('Presioname'),
-          ),
+              child: Text("Hola Franklin"),
+              onPressed: () {
+                var t = DateTime.now();
+                print(t);
+              }),
         ),
       ),
     );
