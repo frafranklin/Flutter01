@@ -30,19 +30,37 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         title: Text("Mis columnas"),
       ),
-      body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body: Column(
+          // <- cambiamos de row a column
+          mainAxisAlignment: MainAxisAlignment.center, // <- cambiamos a center
+          crossAxisAlignment:
+              CrossAxisAlignment.start, // pusimos este atributos
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Container(
+              // width: MediaQuery.of(context).size.width,
               child: Text(
                 "Franklin ",
                 textAlign: TextAlign.center,
               ),
               // width: MediaQuery.of(context).size.width,
             ),
-            Text("De La Cruz "),
-            Text("Asto"),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Text(
+                "De La Cruz ",
+                textAlign: TextAlign.center,
+              ),
+              // width: MediaQuery.of(context).size.width,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: Text(
+                "Asto ",
+                textAlign: TextAlign.center,
+              ),
+              // width: MediaQuery.of(context).size.width,
+            ),
           ]),
     );
   }
