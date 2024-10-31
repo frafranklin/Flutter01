@@ -28,7 +28,7 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         title: Text("Bienvenidos"),
       ),
-      body: Center(
+      body: Container(
         child: Text("Franklin De La Cruz Asto"),
       ),
     );
