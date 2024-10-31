@@ -9,6 +9,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return const MaterialApp(
       title: "Columnas",
       home: Inicio(),
@@ -62,6 +63,58 @@ class _InicioState extends State<Inicio> {
               // width: MediaQuery.of(context).size.width,
             ),
           ]),
+=======
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Mi Aplicación De La Cruz Asto'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  var t = DateTime.now();
+                  print(t);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 237, 5, 5),
+                  foregroundColor: Colors.white,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.access_time),
+                    SizedBox(width: 8),
+                    Text("Franklin Botón 1"),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5), // Espacio de 5 píxeles entre botones
+              ElevatedButton(
+                onPressed: () {
+                  var t = DateTime.now();
+                  print(t);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 5, 237, 167),
+                  foregroundColor: Colors.white,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.access_time),
+                    SizedBox(width: 8),
+                    Text("Franklin Botón 2"),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+>>>>>>> 67b94ad (2 botones)
     );
   }
 }
