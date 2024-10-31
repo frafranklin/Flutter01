@@ -14,11 +14,25 @@ class MiAplicacion extends StatelessWidget {
         ),
         body: Center(
           child: ElevatedButton(
-              child: Text("Hola Franklin"),
-              onPressed: () {
-                var t = DateTime.now();
-                print(t);
-              }),
+            onPressed: () {
+              var t = DateTime.now();
+              print(t);
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(
+                  255, 237, 5, 5), // Cambiar el color de fondo a azul
+              foregroundColor:
+                  Colors.white, // Cambiar el color del texto a blanco
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.access_time),
+                SizedBox(width: 8),
+                Text("Hola mundo"),
+              ],
+            ),
+          ),
         ),
       ),
     );
