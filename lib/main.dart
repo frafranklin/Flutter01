@@ -1,56 +1,81 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() => runApp(TarjetaPersonalizadaApp());
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class TarjetaPersonalizadaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "Columnas",
-      home: Inicio(),
+    return MaterialApp(
+      title: 'Tarjeta Personalizada',
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+      home: TarjetaPersonalizadaPage(),
     );
   }
 }
 
-class Inicio extends StatefulWidget {
-  const Inicio({super.key});
-
-  @override
-  State<Inicio> createState() => _InicioState();
-}
-
-class _InicioState extends State<Inicio> {
+class TarjetaPersonalizadaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Mi Aplicación De La Cruz Asto'),
-        ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              var t = DateTime.now();
-              print(t);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(
-                  255, 237, 5, 5), // Cambiar el color de fondo a azul
-              foregroundColor:
-                  Colors.white, // Cambiar el color del texto a blanco
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.access_time),
-                SizedBox(width: 8),
-                Text("Hola mundo"),
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tarjeta Personalizada Franklin'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Container(
+          width: 300.0,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                offset: Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+// Imagen superior con esquinas redondeadas
+              ClipRRect(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
+                child: Image.network(
+                  'https://via.placeholder.com/300x150.png?text=Imagen+de+Ejemplo',
+                  height: 150.0,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+// Título de la tarjeta
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                  'Título de la Tarjeta',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal[800],
+                  ),
+                ),
+              ),
+// Descripción de la tarjeta
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  'Hola que tal soy FRANKLIN DE LA CRUZ ASTO Y ME GUSTA LA PROGRAMACIÓN ORIENTADA A OBJETOS, HE APRENDIDO VARIOS LENGUAJES DE PROGRAMACIÓN',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+            ],
           ),
         ),
       ),
