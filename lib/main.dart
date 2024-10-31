@@ -28,9 +28,15 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         title: Text("Bienvenidos"),
       ),
-      body: Container(
-        child: Text("Franklin De La Cruz Asto"),
-      ),
+      body: cuerpo(
+          // child: Text("Franklin De La Cruz Asto"),
+          ),
     );
   }
+}
+
+Widget cuerpo() {
+  return Container(
+    child: Text("Que tal"),
+  );
 }
