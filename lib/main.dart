@@ -37,6 +37,12 @@ class _InicioState extends State<Inicio> {
 
 Widget cuerpo() {
   return Container(
-    child: Text("Que tal"),
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: NetworkImage(
+            "https://th.bing.com/th/id/R.27278d8ed7c27cab1df565b7e85724fd?rik=Ds0uxjZUs9zNmg&riu=http%3a%2f%2fwww.tuexperto.com%2fwp-content%2fuploads%2f2017%2f06%2ffondos_de_pantalla_HD_gratis_para_movil_12.jpg&ehk=lonJiD7J3aUSO7KwsoIeOTm3x%2b5hfm88BBLXQEgyfAE%3d&risl=&pid=ImgRaw&r=0"),
+      ),
+    ),
+    child: Text("Que tal: Franklin De la Cruz Asto"),
   );
 }
