@@ -30,9 +30,13 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         title: Text("Mis columnas"),
       ),
-      body: Center(
-        child: Text("Las columnas"),
-      ),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // añadimos solo esto XD
+          children: <Widget>[
+            Text("Franklin"),
+            Text("De La Cruz "),
+            Text("Asto"),
+          ]),
     );
   }
 }
