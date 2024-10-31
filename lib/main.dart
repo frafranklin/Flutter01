@@ -1,68 +1,65 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(BotonPersonalizadoApp());
+void main() => runApp(BannerGradienteApp());
 
-class BotonPersonalizadoApp extends StatelessWidget {
+class BannerGradienteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Botón Personalizado',
+      title: 'Banner con Gradiente',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
-      home: BotonPersonalizadoPage(),
+      home: BannerGradientePage(),
     );
   }
 }
 
-class BotonPersonalizadoPage extends StatelessWidget {
-// Función que se ejecuta al presionar el botón
-  void _accionBoton(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('¡Botón Presionado!'),
-        duration: Duration(seconds: 2),
-      ),
-    );
-  }
-
+class BannerGradientePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Botón Personalizado'),
+        title: Text('Banner con Gradiente'),
         centerTitle: true,
       ),
-      body: Center(
-        child: GestureDetector(
-          onTap: () => _accionBoton(context),
-          child: Container(
-            width: 200.0,
-            padding: EdgeInsets.symmetric(vertical: 15.0),
+      body: Column(
+        children: [
+// Banner con gradiente y texto
+          Container(
+            height: 100.0,
+            width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(30.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.blueAccent.withOpacity(0.6),
-                  spreadRadius: 2,
-                  blurRadius: 7,
-                  offset: Offset(0, 3),
-                ),
-              ],
+              gradient: LinearGradient(
+                colors: [Colors.pink, Colors.orange],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
             child: Center(
               child: Text(
-                'Presióname Franklin ',
+                'Bienvenido a Franklin De La Cruz ',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 18.0,
+                  fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
-        ),
+// Contenido adicional para demostrar el layout
+          Expanded(
+            child: Center(
+              child: Text(
+                'Contenido Principal',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
