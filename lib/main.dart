@@ -32,7 +32,11 @@ class _InicioState extends State<Inicio> {
       ),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center, // añadimos solo esto XD
+          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+            ),
             Text("Franklin"),
             Text("De La Cruz "),
             Text("Asto"),
