@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pagina2.dart';
 
 void main() => runApp(Cuartaappnav());
 
@@ -9,7 +10,7 @@ class Cuartaappnav extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Navegación",
-      home: Inicio(),
+      home: OtraPagina(),
     );
   }
 }
@@ -28,13 +29,22 @@ class InicioState extends State<Inicio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navegación de Roberto"),
+        title: Text("Navegación de Franklin"),
         backgroundColor: Colors.red,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Ventana 1")],
+          children: [
+            Text("Ventana 1"),
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              ),
+              child: Text("Ir a la otra pagina"),
+              onPressed: () => {print("Presionaste este botón")},
+            )
+          ],
         ),
       ),
     );
